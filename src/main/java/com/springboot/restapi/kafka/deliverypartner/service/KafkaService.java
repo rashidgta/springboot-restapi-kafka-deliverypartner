@@ -13,8 +13,15 @@ public class KafkaService {
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
 
-    public void updateLocation(String location){
+    public void sendLocation(String location){
         kafkaTemplate.send(AppConstant.LOCATION_TOPIC_NAME,location);
-        log.info("message produced");
+        log.info("Location sent");
+    }
+
+    public void displayMessage(String sendMessage) {
+        kafkaTemplate.send(AppConstant.LOCATION_TOPIC_NAME,sendMessage);
+        log.info("Message sent");
+
+
     }
 }
