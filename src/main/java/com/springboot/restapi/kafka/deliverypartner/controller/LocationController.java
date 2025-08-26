@@ -19,7 +19,7 @@ public class LocationController {
     @RequestMapping("/update")
     public ResponseEntity<?> updateLocation(){
 
-        for (int i = 1; i <= 10000; i ++ ) {
+        for (int i = 1; i <= 10; i ++ ) {
             kafkaService.updateLocation("(" + Math.round(Math.random() * 100) + ","
                     + Math.round(Math.random() * 100) + ")");
         }
